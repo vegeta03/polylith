@@ -1,6 +1,7 @@
 (ns polylith.clj.core.shell.candidate.specification
   [:require [polylith.clj.core.common.interface :as common]
-            [polylith.clj.core.shell.candidate.creators :as c]
+            [polylith.clj.core.shell.interface.creator :as c]
+            [polylith.clj.core.shell.candidate.custom-cmd :as custom-cmd]
             [polylith.clj.core.shell.candidate.selector.remote-branches :as remote-branches]
             [polylith.clj.core.shell.candidate.selector.ws-bricks :as ws-bricks]
             [polylith.clj.core.shell.candidate.selector.ws-explore :as ws-explore]
@@ -120,8 +121,12 @@
   (map #(c/group-arg (str "+" %) group-id (str "+" %))
        (-> settings :profile-to-settings keys)))
 
+;----------------------
+
+
 (defn candidates [{:keys [settings user-input] :as workspace}]
   (let [{:keys [ws-dir ws-file]} user-input
+        custom-commands (c/single-txt "x" (custom-cmd/specs workspace))
         show-migrate? (common/toolsdeps1? workspace)
         info-profiles (profiles :info settings)
         test-profiles (profiles :test settings)
@@ -136,6 +141,7 @@
                   libs
                   version
                   switch-ws
+                  custom-commands
                   (info info-profiles)
                   (ws ws-profiles)]
                  (migrate show-migrate?)

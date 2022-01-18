@@ -65,7 +65,7 @@
         ws-config (if (= :toolsdeps2 ws-type)
                     (config/ws-config-from-disk ws-dir color-mode)
                     (config/ws-config-from-dev polylith))
-        {:keys [vcs top-namespace ws-type interface-ns default-profile-name tag-patterns release-tag-pattern stable-tag-pattern ns-to-lib compact-views]
+        {:keys [vcs top-namespace ws-type interface-ns default-profile-name tag-patterns release-tag-pattern stable-tag-pattern ns-to-lib compact-views commands]
          :or {vcs {:name "git", :auto-add false}
               compact-views {}
               interface-ns "interface"}} ws-config
@@ -96,6 +96,7 @@
                                    :active-profiles active-profiles
                                    :tag-patterns patterns
                                    :color-mode color-mode
+                                   :commands commands
                                    :compact-views compact-views
                                    :user-config-filename user-config-filename
                                    :empty-character empty-character

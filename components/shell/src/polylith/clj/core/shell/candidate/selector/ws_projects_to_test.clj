@@ -1,6 +1,6 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-projects-to-test
   (:require [clojure.set :as set]
-            [polylith.clj.core.shell.candidate.creators :as c]
+            [polylith.clj.core.shell.candidate.creator :as c]
             [polylith.clj.core.shell.candidate.shared :as shared]))
 
 (defn select

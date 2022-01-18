@@ -1,7 +1,7 @@
 (ns polylith.clj.core.shell.candidate.selector.file-explorer
   (:require [clojure.string :as str]
             [polylith.clj.core.file.interface :as file]
-            [polylith.clj.core.shell.candidate.creators :as c]
+            [polylith.clj.core.shell.candidate.creator :as c]
             [polylith.clj.core.user-config.interface :as user-config]))
 
 (defn quotify [path]

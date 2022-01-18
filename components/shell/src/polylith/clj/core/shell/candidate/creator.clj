@@ -1,4 +1,4 @@
-(ns polylith.clj.core.shell.candidate.creators
+(ns polylith.clj.core.shell.candidate.creator
   (:require [polylith.clj.core.util.interface.color :as color]))
 
 (defn with-val [candidate value]
@@ -75,45 +75,41 @@
 (defn function [f]
   {:function f})
 
-(defn single-txt
-  ([value & args]
-   (candidate value value value :candidates (conj args false))))
+(defn single-txt [value args]
+  (candidate value value value :candidates (conj args false)))
 
-(defn flag-explicit
-  ([value group-id & values]
-   (let [flag (str ":" value)]
-     (candidate flag flag flag :remaining (concat values [false {:group {:id group-id
-                                                                         :param flag}}])))))
+(defn flag-explicit [value group-id values]
+  (let [flag (str ":" value)]
+    (candidate flag flag flag :remaining (concat values [false {:group {:id group-id
+                                                                        :param flag}}]))))
 
-(defn flag
-  ([value group-id & values]
-   (let [flag (str ":" value)]
-     (candidate flag flag value :remaining (concat values [false {:group {:id group-id
-                                                                          :param value}}])))))
+(defn flag [value group-id values]
+  (let [flag (str ":" value)]
+    (candidate flag flag value :remaining (concat values [false {:group {:id group-id
+                                                                         :param value}}]))))
 
-(defn group-arg [value group-id param & values]
+(defn group-arg [value group-id param values]
   (candidate value value value :remaining (concat values [{:group {:id group-id
                                                                    :param param}}])))
 
-(defn multi-arg [group-id param & values]
+(defn multi-arg [group-id param values]
   (candidate "" "" "" :remaining (concat values [{:group {:id group-id
                                                           :param param}}])))
 
-(defn fn-comma-arg [value group-id param function & values]
+(defn fn-comma-arg [value group-id param function values]
   (candidate (str value ":") value value :fn (concat values [{:function function
                                                               :group {:id group-id
                                                                       :param param}}])))
 
-(defn fn-explorer
-  ([value group-id select-fn]
-   (candidate (str value ":") value value :fn [true
-                                               {:group {:id group-id}
-                                                :function select-fn}
-                                               {:child {:type :fn
-                                                        :stay? true
-                                                        :group {:id group-id
-                                                                :param value}
-                                                        :function select-fn}}])))
+(defn fn-explorer [value group-id select-fn]
+  (candidate (str value ":") value value :fn [true
+                                              {:group {:id group-id}
+                                               :function select-fn}
+                                              {:child {:type :fn
+                                                       :stay? true
+                                                       :group {:id group-id
+                                                               :param value}
+                                                       :function select-fn}}]))
 
 (defn fn-explorer-child [value entity color-mode group select-fn]
   (candidate (str value ":")
@@ -124,10 +120,8 @@
                          :group group
                          :function select-fn}]))
 
-(defn multi-fn
-  ([value & args]
-   (candidate (str value ":") value value :fn (concat args [true]))))
+(defn multi-fn [value args]
+  (candidate (str value ":") value value :fn (concat args [true])))
 
-(defn multi-param
-  ([value & args]
-   (candidate (str value ":") value value :candidates (concat args [true]))))
+(defn multi-param [value args]
+  (candidate (str value ":") value value :candidates (concat args [true])))

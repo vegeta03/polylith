@@ -1,7 +1,7 @@
 (ns polylith.clj.core.shell.candidate.selector.remote-branches
   (:require [clojure.string :as str]
             [polylith.clj.core.sh.interface :as sh]
-            [polylith.clj.core.shell.candidate.creators :as c]))
+            [polylith.clj.core.shell.interface.creator :as c]))
 
 (defn branch [branch-str]
   (let [branch (last (str/split (str/trim branch-str) #" "))]

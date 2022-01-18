@@ -29,5 +29,11 @@
 (defn- def-val [amap key]
   (list 'def key (list (keyword key) amap)))
 
+(defn fn-var [the-ns function]
+  (let [fn-symbol (symbol (str the-ns) function)
+        fn-var (find-var fn-symbol)]
+    (or fn-var
+        (throw (Exception. (str "Couldn't find function " fn-symbol))))))
+
 (defmacro def-map [amap keys]
   (conj (map #(def-val amap %) keys) 'do))

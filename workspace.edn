@@ -8,4 +8,5 @@
                 :release "v[0-9]*"}
  :projects {"api"           {:alias "api", :test []}
             "poly"          {:alias "poly"}
-            "development"   {:alias "dev"}}}
+            "development"   {:alias "dev"}}
+ :commands {"ws-name" polylith.clj.core.command.ws-name}}

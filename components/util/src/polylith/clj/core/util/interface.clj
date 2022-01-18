@@ -18,6 +18,10 @@
     []
     [(first vals)]))
 
+(defn fn-var [the-ns function]
+  (require the-ns)
+  (core/fn-var the-ns function))
+
 (defmacro def-keys
   "Defines all selected keys in a map, e.g.:
     (def-map mymap [name age length])"

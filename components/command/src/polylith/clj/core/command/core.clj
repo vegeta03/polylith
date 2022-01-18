@@ -1,6 +1,7 @@
 (ns polylith.clj.core.command.core
   (:require [polylith.clj.core.command.cmd-validator.core :as cmd-validator]
             [polylith.clj.core.command.create :as create]
+            [polylith.clj.core.command.custom-cmd :as custom-cmd]
             [polylith.clj.core.command.dependencies :as dependencies]
             [polylith.clj.core.command.exit-code :as exit-code]
             [polylith.clj.core.command.info :as info]
@@ -69,6 +70,8 @@
     (let [brick-name (first selected-bricks)
           project-name (first selected-projects)
           toolsdeps1? (common/toolsdeps1? workspace)
+          xcmd (-> args rest first)
+          xargs (-> args rest rest vec)
           [ok? message] (cmd-validator/validate workspace user-input color-mode)]
       (if ok?
         (case cmd
@@ -86,6 +89,7 @@
           "test" (test/run workspace unnamed-args is-verbose color-mode)
           "version" (version)
           "ws" (ws-explorer/ws workspace get out color-mode)
+          "x" (custom-cmd/execute xcmd xargs workspace)
           (unknown-command cmd))
         (println message))
       (exit-code/code cmd workspace))))
