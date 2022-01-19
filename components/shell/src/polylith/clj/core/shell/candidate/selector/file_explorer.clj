@@ -1,7 +1,7 @@
 (ns polylith.clj.core.shell.candidate.selector.file-explorer
   (:require [clojure.string :as str]
             [polylith.clj.core.file.interface :as file]
-            [polylith.clj.core.shell.candidate.creator :as c]
+            [polylith.clj.core.autocomplete.interface :as a]
             [polylith.clj.core.user-config.interface :as user-config]))
 
 (defn quotify [path]
@@ -11,7 +11,7 @@
 
 (defn dir-fn [value group select-fn]
   (let [dir (str (quotify value) "/")]
-    (c/candidate dir
+    (a/candidate dir
                  dir
                  (quotify value)
                  :fn [true
@@ -20,7 +20,7 @@
 
 (defn file-arg
   ([value group]
-   (c/candidate (quotify value)
+   (a/candidate (quotify value)
                 value
                 value :candidates [{:group (dissoc group :param)}])))
 

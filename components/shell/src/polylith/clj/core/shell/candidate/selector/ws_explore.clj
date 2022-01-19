@@ -1,6 +1,6 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-explore
   (:require [polylith.clj.core.ws-explorer.interface :as ws-explorer]
-            [polylith.clj.core.shell.interface.creator :as c]
+            [polylith.clj.core.autocomplete.interface :as a]
             [polylith.clj.core.shell.candidate.selector.ws-explore :as ws-explore]))
 
 (defn map-strings [values]
@@ -22,5 +22,5 @@
   (let [current (or (get-in groups [:ws "get" :args]) [])
         values (ws-explorer/extract workspace current)
         result (strings values (ws-explorer/extract workspace (conj current "keys")))]
-    (mapv #(c/fn-comma-arg % :ws "get" #'ws-explore/select true)
+    (mapv #(a/fn-comma-arg % :ws "get" #'ws-explore/select true)
           result)))

@@ -1,11 +1,11 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-bricks
   (:require [clojure.set :as set]
-            [polylith.clj.core.shell.candidate.creator :as c]
+            [polylith.clj.core.autocomplete.interface :as a]
             [polylith.clj.core.shell.candidate.shared :as shared]))
 
 (defn candidate [brick-name group select-fn base-names color-mode]
   (let [colored-brick (shared/colored-brick brick-name base-names color-mode)]
-    (c/candidate (str brick-name ":")
+    (a/candidate (str brick-name ":")
                  colored-brick
                  brick-name
                  :fn [true

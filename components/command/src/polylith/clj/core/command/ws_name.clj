@@ -1,8 +1,8 @@
 (ns polylith.clj.core.command.ws-name
-  (:require [polylith.clj.core.shell.interface.creator :as c]))
+  (:require [polylith.clj.core.autocomplete.interface :as a]))
 
 (defn spec [_]
-  (c/single-txt "ws-name"))
+  (a/single-txt "ws-name"))
 
 (defn execute [args {:keys [name]}]
   (println name))

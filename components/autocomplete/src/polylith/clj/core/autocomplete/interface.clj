@@ -1,15 +1,5 @@
-(ns polylith.clj.core.shell.candidate.creator
-  (:require [polylith.clj.core.util.interface.color :as color]))
-
-(defn with-val [candidate value]
-  (cond
-    (map? value) (cond-> (merge candidate value))
-    (keyword? value) (assoc candidate :top-group-id value)
-    (string? value) (assoc candidate :parsed-value value)
-    (integer? value) (assoc candidate :order value)
-    (boolean? value) (assoc candidate :stay? value)
-    (sequential? value) (assoc candidate :candidates (vec value))
-    :else (throw (Exception. (str "Unknown type for value: " value)))))
+(ns polylith.clj.core.autocomplete.interface
+  (:require [polylith.clj.core.autocomplete.core :as core]))
 
 (defn candidate
   "Creates a candidate which is later used by the jline library.
@@ -60,7 +50,7 @@
           :parsed-value parsed-value
           :type type
           :candidates []}
-         (reduce with-val {} args)))
+         (reduce core/with-val {} args)))
 
 (defn optional []
   {:description "optional"})
@@ -75,28 +65,28 @@
 (defn function [f]
   {:function f})
 
-(defn single-txt [value args]
+(defn single-txt [value & args]
   (candidate value value value :candidates (conj args false)))
 
-(defn flag-explicit [value group-id values]
+(defn flag-explicit [value group-id & values]
   (let [flag (str ":" value)]
     (candidate flag flag flag :remaining (concat values [false {:group {:id group-id
                                                                         :param flag}}]))))
 
-(defn flag [value group-id values]
+(defn flag [value group-id & values]
   (let [flag (str ":" value)]
     (candidate flag flag value :remaining (concat values [false {:group {:id group-id
                                                                          :param value}}]))))
 
-(defn group-arg [value group-id param values]
+(defn group-arg [value group-id param & values]
   (candidate value value value :remaining (concat values [{:group {:id group-id
                                                                    :param param}}])))
 
-(defn multi-arg [group-id param values]
+(defn multi-arg [group-id param & values]
   (candidate "" "" "" :remaining (concat values [{:group {:id group-id
                                                           :param param}}])))
 
-(defn fn-comma-arg [value group-id param function values]
+(defn fn-comma-arg [value group-id param function & values]
   (candidate (str value ":") value value :fn (concat values [{:function function
                                                               :group {:id group-id
                                                                       :param param}}])))
@@ -111,17 +101,8 @@
                                                                :param value}
                                                        :function select-fn}}]))
 
-(defn fn-explorer-child [value entity color-mode group select-fn]
-  (candidate (str value ":")
-             (color/entity entity value color-mode)
-             value :fn [true
-                        {:type :fn
-                         :stay? true
-                         :group group
-                         :function select-fn}]))
-
-(defn multi-fn [value args]
+(defn multi-fn [value & args]
   (candidate (str value ":") value value :fn (concat args [true])))
 
-(defn multi-param [value args]
+(defn multi-param [value & args]
   (candidate (str value ":") value value :candidates (concat args [true])))

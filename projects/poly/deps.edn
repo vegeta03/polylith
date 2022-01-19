@@ -1,4 +1,5 @@
-{:deps {poly/change        {:local/root "../../components/change"}
+{:deps {poly/autocomplete  {:local/root "../../components/autocomplete"}
+        poly/change        {:local/root "../../components/change"}
         poly/command       {:local/root "../../components/command"}
         poly/common        {:local/root "../../components/common"}
         poly/creator       {:local/root "../../components/creator"}

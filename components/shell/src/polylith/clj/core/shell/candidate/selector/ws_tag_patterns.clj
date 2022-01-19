@@ -1,5 +1,5 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-tag-patterns
-  (:require [polylith.clj.core.shell.interface.creator :as c]))
+  (:require [polylith.clj.core.autocomplete.interface :as a]))
 
 (defn tag-keys [tag-pattern-key]
   (let [tag-name (name tag-pattern-key)]
@@ -7,6 +7,6 @@
 
 (defn select [candidate _ {:keys [settings]}]
   (let [group-id (-> candidate :group :id)]
-    (map #(c/single-txt % (c/group group-id))
+    (map #(a/single-txt % (a/group group-id))
          (mapcat tag-keys
                  (-> settings :tag-patterns keys)))))

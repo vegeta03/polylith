@@ -1,7 +1,7 @@
 (ns polylith.clj.core.shell.candidate.selector.remote-branches
   (:require [clojure.string :as str]
             [polylith.clj.core.sh.interface :as sh]
-            [polylith.clj.core.shell.interface.creator :as c]))
+            [polylith.clj.core.autocomplete.interface :as a]))
 
 (defn branch [branch-str]
   (let [branch (last (str/split (str/trim branch-str) #" "))]
@@ -16,5 +16,5 @@
 
 (defn select [candidate _ _]
   (let [group-id (-> candidate :group :id)]
-    (mapv #(c/group-arg % group-id "branch")
+    (mapv #(a/group-arg % group-id "branch")
           (branches))))

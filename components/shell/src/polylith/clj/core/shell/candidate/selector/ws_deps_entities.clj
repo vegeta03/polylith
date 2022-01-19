@@ -1,18 +1,18 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-deps-entities
   (:require [clojure.set :as set]
             [polylith.clj.core.common.interface :as common]
-            [polylith.clj.core.shell.candidate.creator :as c]
+            [polylith.clj.core.autocomplete.interface :as a]
             [polylith.clj.core.shell.candidate.shared :as shared]
             [polylith.clj.core.util.interface.color :as color]))
 
 (defn brick-candidate [brick-name base-names {:keys [color-mode]}]
-  (c/candidate brick-name
+  (a/candidate brick-name
                (shared/colored-brick brick-name base-names color-mode)
                brick-name :remaining [{:group {:id :deps
                                                :param "brick"}}]))
 
 (defn project-candidate [project-name {:keys [color-mode]}]
-  (c/candidate project-name
+  (a/candidate project-name
                (color/project project-name color-mode)
                project-name :remaining [{:group {:id :deps
                                                  :param "project"}}]))
