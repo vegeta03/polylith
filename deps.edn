@@ -47,7 +47,6 @@
                                zprint/zprint {:mvn/version "1.2.0"}}}
 
             :test {:extra-paths ["components/api/test"
-                                 "components/autocomplete/test"
                                  "components/change/test"
                                  "components/command/test"
                                  "components/creator/test"
