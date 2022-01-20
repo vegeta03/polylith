@@ -1,6 +1,6 @@
 (ns polylith.clj.core.shell.candidate.specification
   [:require [polylith.clj.core.common.interface :as common]
-            [polylith.clj.core.autocomplete.interface :as a]
+            [polylith.clj.core.autocomplete.interface.v1 :as a]
             [polylith.clj.core.shell.candidate.custom-cmd :as custom-cmd]
             [polylith.clj.core.shell.candidate.selector.remote-branches :as remote-branches]
             [polylith.clj.core.shell.candidate.selector.ws-bricks :as ws-bricks]

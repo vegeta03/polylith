@@ -1,6 +1,6 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-explore
   (:require [polylith.clj.core.ws-explorer.interface :as ws-explorer]
-            [polylith.clj.core.autocomplete.interface :as a]
+            [polylith.clj.core.autocomplete.interface.v1 :as a]
             [polylith.clj.core.shell.candidate.selector.ws-explore :as ws-explore]))
 
 (defn map-strings [values]

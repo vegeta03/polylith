@@ -1,6 +1,6 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-projects-to-test
   (:require [clojure.set :as set]
-            [polylith.clj.core.autocomplete.interface :as a]
+            [polylith.clj.core.autocomplete.interface.v1 :as a]
             [polylith.clj.core.shell.candidate.shared :as shared]
             [polylith.clj.core.util.interface.color :as color]))
 

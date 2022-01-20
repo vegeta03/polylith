@@ -1,5 +1,5 @@
 (ns polylith.clj.core.shell.candidate.selector.ws-tag-patterns
-  (:require [polylith.clj.core.autocomplete.interface :as a]))
+  (:require [polylith.clj.core.autocomplete.interface.v1 :as a]))
 
 (defn tag-keys [tag-pattern-key]
   (let [tag-name (name tag-pattern-key)]

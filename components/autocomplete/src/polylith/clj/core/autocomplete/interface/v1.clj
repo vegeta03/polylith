@@ -1,4 +1,4 @@
-(ns polylith.clj.core.autocomplete.interface
+(ns polylith.clj.core.autocomplete.interface.v1
   (:require [polylith.clj.core.autocomplete.core :as core]))
 
 (defn candidate [value display parsed-value type args]
