@@ -1,9 +1,5 @@
-(ns polylith.clj.core.shell.candidate.custom-cmd
-  (:require [polylith.clj.core.util.interface :as util]))
+(ns polylith.clj.core.shell.candidate.custom-cmd)
 
-(defn spec [[_ cmd-ns] workspace]
-  ((util/fn-var cmd-ns "spec") workspace))
-
-(defn specs [workspace]
-  (mapv #(spec % workspace)
+(defn auto-complete [workspace]
+  (mapv #(-> % second :auto-complete)
         (-> workspace :settings :commands)))

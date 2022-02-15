@@ -44,9 +44,15 @@
 (def help-deps-project (a/flag "project" :help-deps))
 (def help-deps-brick (a/flag "brick" :help-deps))
 (def help-deps (a/single-txt "deps" :help-deps [help-deps-brick help-deps-project]))
-(def help (a/single-txt "help" (vec (concat [help-create help-deps]
-                                            (mapv #(a/single-txt %)
-                                                  ["check" "diff" "info" "libs" "switch-ws" "shell" "tap" "test" "version" "ws"])))))
+
+(defn help [{:keys [commands]}]
+  (let [custom-commands (map #(-> % first str)
+                             (filter #(-> % second :help) commands))
+        standard-commands ["check" "diff" "info" "libs" "switch-ws" "shell" "tap" "test" "version" "ws"]
+        commands (concat standard-commands custom-commands)]
+    (a/single-txt "help" (vec (concat [help-create help-deps]
+                                      (mapv #(a/single-txt %)
+                                            commands))))))
 
 ;; info
 (def info-since (a/fn-explorer "since" :info #'ws-tag-patterns/select))
@@ -126,7 +132,7 @@
 
 (defn candidates [{:keys [settings user-input] :as workspace}]
   (let [{:keys [ws-dir ws-file]} user-input
-        custom-commands (a/single-txt "x" (custom-cmd/specs workspace))
+        custom-commands (custom-cmd/auto-complete workspace)
         show-migrate? (common/toolsdeps1? workspace)
         info-profiles (profiles :info settings)
         test-profiles (profiles :test settings)
@@ -137,13 +143,13 @@
     (vec (concat [check
                   deps
                   diff
-                  help
+                  (help settings)
                   libs
                   version
                   switch-ws
-                  custom-commands
                   (info info-profiles)
                   (ws ws-profiles)]
+                 custom-commands
                  (migrate show-migrate?)
                  (if current-ws?
                    [create

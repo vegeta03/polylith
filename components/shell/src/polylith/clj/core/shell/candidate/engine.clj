@@ -105,7 +105,8 @@
           child
           (set-group-arg! match word)))
       (do
-        (when potential-exact-match? (set-group-arg! candidate word))
+        (when potential-exact-match?
+          (set-group-arg! candidate word))
         (assoc candidate
                :candidates filtered-candidates
                :word word)))))

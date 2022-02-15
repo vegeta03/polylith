@@ -9,7 +9,8 @@
                {:name "helpers"}])
 
 (deftest enrich-settings--a-set-of-projects-without-project-mapping--returns-dev-and-undefined-mappings
-  (is (= {:projects {"backend-system" {:alias "?4"}
+  (is (= {:commands {}
+          :projects {"backend-system" {:alias "?4"}
                      "banking-system" {:alias "?2"}
                      "car"            {:alias "?3"}
                      "clojure"        {:alias "?1"}
@@ -18,7 +19,8 @@
          (settings/enrich-settings nil projects))))
 
 (deftest enrich-settings--a-set-of-projects-with-incomplete-project-mapping--returns-dev-and-undefined-mappings
-  (is (= {:projects {"backend-system" {:alias "?4"}
+  (is (= {:commands {}
+          :projects {"backend-system" {:alias "?4"}
                      "banking-system" {:alias "?2"}
                      "car"            {:alias "?3"}
                      "clojure"        {:alias "?1"}

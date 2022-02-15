@@ -14,7 +14,15 @@
             [polylith.clj.core.help.ws :as ws]
             [polylith.clj.core.help.summary :as summary]))
 
-(defn print-help [cmd ent is-all is-show-project is-show-brick is-show-workspace toolsdeps1? color-mode]
+(defn custom-cmd-help [cmd is-all toolsdeps1? commands color-mode]
+  (if-let [description (get-in commands [cmd :help :description])]
+    (if (sequential? description)
+      (doseq [row description]
+        (println (str "  " row)))
+      (println "The key :help > :description must be a vector."))
+    (summary/print-help is-all toolsdeps1? commands color-mode)))
+
+(defn print-help [cmd ent is-all is-show-project is-show-brick is-show-workspace toolsdeps1? commands color-mode]
   (case cmd
     "check" (check/print-help color-mode)
     "create" (create/print-help ent color-mode)
@@ -29,4 +37,4 @@
     "test" (test/print-help color-mode)
     "version" (version/print-help)
     "ws" (ws/print-help color-mode)
-    (summary/print-help is-all toolsdeps1? color-mode)))
+    (custom-cmd-help cmd is-all toolsdeps1? commands color-mode)))

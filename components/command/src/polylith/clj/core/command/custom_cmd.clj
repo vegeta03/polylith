@@ -1,13 +1,6 @@
-(ns polylith.clj.core.command.custom-cmd
-  (:require [polylith.clj.core.util.interface :as util]))
-
-(defn execute-cmd [cmd-ns args workspace]
-  (require cmd-ns)
-  ((util/fn-var cmd-ns "execute") args workspace))
+(ns polylith.clj.core.command.custom-cmd)
 
 (defn execute [cmd args workspace]
-  (let [commands (-> workspace :settings :commands)
-        cmd-ns (second (util/find-first #(= cmd (first %)) commands))]
-    (if cmd-ns
-      (execute-cmd cmd-ns args workspace)
-      (println "Couldn't find custom command '" cmd "'."))))
+  (if-let [execute-fn (-> workspace :settings :commands :execute-fn)]
+    (execute-fn args workspace)
+    (println "Couldn't find custom command '" cmd "'.")))

@@ -18,9 +18,9 @@
     []
     [(first vals)]))
 
-(defn fn-var [the-ns function]
+(defn variable [the-ns function]
   (require the-ns)
-  (core/fn-var the-ns function))
+  (core/variable the-ns function))
 
 (defmacro def-keys
   "Defines all selected keys in a map, e.g.:

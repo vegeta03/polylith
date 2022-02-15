@@ -9,4 +9,4 @@
  :projects {"api"           {:alias "api", :test []}
             "poly"          {:alias "poly"}
             "development"   {:alias "dev"}}
- :commands {"ws-name" polylith.clj.core.command.ws-name}}
+ :commands {"hello" polylith.clj.core.command.custom.hello}}

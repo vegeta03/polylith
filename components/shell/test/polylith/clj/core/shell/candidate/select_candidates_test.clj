@@ -14,7 +14,7 @@
   (mapv color/clean-colors entities))
 
 (deftest all-commands
-  (is (= ["check" "create" "deps" "diff" "help" "info" "libs" "switch-ws" "test" "version" "ws" "x"]
+  (is (= ["check" "create" "deps" "diff" "help" "info" "libs" "switch-ws" "test" "version" "ws"]
          (candidates ""))))
 
 (deftest check

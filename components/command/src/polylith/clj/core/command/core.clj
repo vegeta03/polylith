@@ -32,14 +32,16 @@
   (doseq [file (-> workspace :changes :changed-files)]
     (println file)))
 
-(defn help [[_ cmd ent] is-all is-show-project is-show-brick is-show-workspace toolsdeps1? color-mode]
-  (help/print-help cmd ent is-all is-show-project is-show-brick is-show-workspace toolsdeps1? color-mode))
+(defn help [[_ cmd ent] is-all is-show-project is-show-brick is-show-workspace toolsdeps1? commands color-mode]
+  (help/print-help cmd ent is-all is-show-project is-show-brick is-show-workspace toolsdeps1? commands color-mode))
 
 (defn version []
   (println (str "  " ver/name " (" ver/date ")")))
 
-(defn unknown-command [cmd]
-  (println (str "  Unknown command '" cmd "'. Type 'poly help' for help.")))
+(defn custom-command [cmd args commands workspace]
+  (if-let [execute-fn (get-in commands [cmd :execute-fn])]
+    (execute-fn (-> args rest vec) workspace)
+    (println (str "  Unknown command '" cmd "'. Type 'poly help' for help."))))
 
 (defn prompt-message []
   (println "  Please use the 'shell' command instead, which gives you support for history (<up> key) and autocomplete (<tab> key)."))
@@ -64,14 +66,13 @@
   (let [color-mode (common/color-mode user-input)
         ws-dir (common/workspace-dir user-input color-mode)
         workspace-fn (workspace-reader-fn color-mode)
-        workspace (workspace-fn user-input ws-file ws-dir)]
+        workspace (workspace-fn user-input ws-file ws-dir)
+        commands (-> workspace :settings :commands)]
     (user-config/create-user-config-if-not-exists)
     (when is-tap (tap/execute "open"))
     (let [brick-name (first selected-bricks)
           project-name (first selected-projects)
           toolsdeps1? (common/toolsdeps1? workspace)
-          xcmd (-> args rest first)
-          xargs (-> args rest rest vec)
           [ok? message] (cmd-validator/validate workspace user-input color-mode)]
       (if ok?
         (case cmd
@@ -80,7 +81,7 @@
           "create" (create/create ws-dir workspace args name top-ns interface branch is-git-add color-mode)
           "deps" (dependencies/deps workspace project-name brick-name unnamed-args is-all)
           "diff" (diff workspace)
-          "help" (help args is-all is-show-project is-show-brick is-show-workspace toolsdeps1? color-mode)
+          "help" (help args is-all is-show-project is-show-brick is-show-workspace toolsdeps1? commands color-mode)
           "info" (info/info workspace unnamed-args)
           "libs" (lib/print-lib-table workspace is-all)
           "migrate" (migrator/migrate ws-dir workspace)
@@ -89,7 +90,6 @@
           "test" (test/run workspace unnamed-args is-verbose color-mode)
           "version" (version)
           "ws" (ws-explorer/ws workspace get out color-mode)
-          "x" (custom-cmd/execute xcmd xargs workspace)
-          (unknown-command cmd))
+          (custom-command cmd args commands workspace))
         (println message))
       (exit-code/code cmd workspace))))

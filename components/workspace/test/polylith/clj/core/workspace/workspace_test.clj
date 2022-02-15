@@ -186,6 +186,7 @@
                 :args            ["get:settings" "branch:create-deps-files"]
                 :clean-result-fn clean-get-settings-result
                 :expected        {:active-profiles      #{"default"}
+                                  :commands             {}
                                   :color-mode           "none"
                                   :compact-views        #{}
                                   :default-profile-name "default"
