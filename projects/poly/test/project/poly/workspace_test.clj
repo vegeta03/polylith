@@ -63,8 +63,8 @@
          (ws-table/table (workspace) false false))))
 
 (deftest libs
-  (is (= ["                                                                                                      w   "
-          "                                                                                                      o   "
+  (is (= ["                                                                                                      w"
+          "                                                                                                      o"
           "                                                                                                      r  w"
           "                                                                                                      k  s"
           "                                                                                                   v  s  -"
@@ -93,12 +93,12 @@
          (libs/table (workspace) false))))
 
 (deftest ifc-deps-table
-  (is (= ["                                                                                            w      "
-          "                    a                                                                       o      "
-          "                    u                                p           t  t     u                 r  w   "
-          "                    t                                a           e  e  t  s  u              k  s   "
-          "                    o                                t           s  s  e  e  s     v     w  s  -   "
-          "                    c                             m  h           t  t  x  r  e     a     o  p  e   "
+  (is (= ["                                                                                            w"
+          "                    a                                                                       o"
+          "                    u                                p           t  t     u                 r  w"
+          "                    t                                a           e  e  t  s  u              k  s"
+          "                    o                                t           s  s  e  e  s     v     w  s  -"
+          "                    c                             m  h           t  t  x  r  e     a     o  p  e"
           "                    o     c     c                 i  -           -  -  t  -  r     l  v  r  a  x  w"
           "                    m  c  o  c  r                 g  f           h  r  -  c  -     i  e  k  c  p  s"
           "                    p  h  m  o  e                 r  i     s     e  u  t  o  i     d  r  s  e  l  -"
@@ -142,12 +142,12 @@
   (let [ws (workspace)
         projects (:projects ws)
         project (common/find-project "poly" projects)]
-    (is (= ["                                                                                         w      "
-            "                 a                                                                       o      "
-            "                 u                                p           t  t     u                 r  w   "
-            "                 t                                a           e  e  t  s  u              k  s   "
-            "                 o                                t           s  s  e  e  s     v     w  s  -   "
-            "                 c                             m  h           t  t  x  r  e     a     o  p  e   "
+    (is (= ["                                                                                         w"
+            "                 a                                                                       o"
+            "                 u                                p           t  t     u                 r  w"
+            "                 t                                a           e  e  t  s  u              k  s"
+            "                 o                                t           s  s  e  e  s     v     w  s  -"
+            "                 c                             m  h           t  t  x  r  e     a     o  p  e"
             "                 o     c     c                 i  -           -  -  t  -  r     l  v  r  a  x  w"
             "                 m  c  o  c  r                 g  f           h  r  -  c  -     i  e  k  c  p  s"
             "                 p  h  m  o  e                 r  i     s     e  u  t  o  i     d  r  s  e  l  -"
@@ -190,31 +190,31 @@
   (let [{:keys [components projects] :as ws} (workspace)
         project (common/find-project "poly" projects)
         brick (common/find-component "workspace" components)]
-    (is (= ["  used by  <  workspace  >  uses           "
+    (is (= ["  used by  <  workspace  >  uses"
             "  -------                   ---------------"
-            "  command                   common         "
-            "                            deps           "
-            "                            file           "
-            "                            path-finder    "
+            "  command                   common"
+            "                            deps"
+            "                            file"
+            "                            path-finder"
             "                            test-helper (t)"
-            "                            text-table     "
-            "                            util           "
-            "                            validator      "]
+            "                            text-table"
+            "                            util"
+            "                            validator"]
            (brick-deps-table/table ws project brick "none")))))
 
 (deftest project-brick-deps
   (let [{:keys [components] :as ws} (workspace)
         brick (common/find-component "workspace" components)]
-    (is (= ["  used by  <  workspace  >  uses           "
+    (is (= ["  used by  <  workspace  >  uses"
             "  -------                   ---------------"
-            "  api                       common         "
-            "  command                   deps           "
-            "                            file           "
-            "                            path-finder    "
+            "  api                       common"
+            "  command                   deps"
+            "                            file"
+            "                            path-finder"
             "                            test-helper (t)"
-            "                            text-table     "
-            "                            util           "
-            "                            validator      "]
+            "                            text-table"
+            "                            util"
+            "                            validator"]
            (brick-ifc-deps/table ws brick)))))
 
 (deftest poly-project-deps

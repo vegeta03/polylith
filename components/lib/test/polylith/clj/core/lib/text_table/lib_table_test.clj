@@ -100,10 +100,10 @@
                          :type "base"}]})
 
 (deftest table--show-brick-with-deps--returns-correct-table
-  (is (= ["                                                                                                                d   "
-          "                                                                                                          a     a   "
-          "                                                                                                          d     t   "
-          "                                                                                                          d  a  a   "
+  (is (= ["                                                                                                                d"
+          "                                                                                                          a     a"
+          "                                                                                                          d     t"
+          "                                                                                                          d  a  a"
           "                                                                                                          r  d  b  u"
           "                                                                                                          e  m  a  s"
           "                                                                                                          s  i  s  e"
@@ -121,10 +121,10 @@
          (lib-table/table workspace false))))
 
 (deftest table--show-all-brick-deps--returns-correct-table
-  (is (= ["                                                                                                                d   "
-          "                                                                                                          a     a   "
-          "                                                                                                          d     t   "
-          "                                                                                                          d  a  a   "
+  (is (= ["                                                                                                                d"
+          "                                                                                                          a     a"
+          "                                                                                                          d     t"
+          "                                                                                                          d  a  a"
           "                                                                                                          r  d  b  u"
           "                                                                                                          e  m  a  s"
           "                                                                                                          s  i  s  e"
@@ -161,13 +161,13 @@
          (lib-table/table data/workspace-01 false))))
 
 (deftest table--show-test-dependencies-for-all-bricks
-  (is (= ["                                                                                      t   "
-          "                                                                                      e   "
-          "                                                                                      s   "
-          "                                                                                   d  t   "
-          "                                                                                   a  -   "
-          "                                                                                   t  h   "
-          "                                                                                   a  e   "
+  (is (= ["                                                                                      t"
+          "                                                                                      e"
+          "                                                                                      s"
+          "                                                                                   d  t"
+          "                                                                                   a  -"
+          "                                                                                   t  h"
+          "                                                                                   a  e"
           "                                                                                   b  l  u"
           "                                                                                   a  p  s"
           "                                                                                   s  e  e"

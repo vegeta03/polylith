@@ -513,6 +513,7 @@
   :user-home "USER-HOME",
   :compact-views #{},
   :active-profiles #{},
+  :commands {},
   :profile-to-settings {},
   :interface-ns "interface",
   :ns-to-lib {"clj-time" "clj-time/clj-time"},
@@ -563,12 +564,12 @@
   :is-no-exit false},
  :version
  {:release
-  {:name "0.2.14-alpha-issue174-01",
+  {:name "0.2.14-alpha-issue113-01",
    :major 0,
    :minor 2,
    :patch 14,
-   :revision "alpha-issue174-01",
-   :date "2022-01-17"},
+   :revision "alpha-issue113-01",
+   :date "2022-02-15"},
   :ws {:type :toolsdeps2, :breaking 1, :non-breaking 0},
   :from {:ws {:type :toolsdeps1}}},
  :ws-dir "/privateWS-HOME/local-dep-old-format",

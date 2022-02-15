@@ -1,4 +1,4 @@
-  used by   <  [32marticle[0m  >  uses    
+  used by   <  [32marticle[0m  >  uses
   --------                 --------
   [32mcomment [0m                 [33mdatabase[0m
   [34mrest-api[0m                 [33mprofile [0m

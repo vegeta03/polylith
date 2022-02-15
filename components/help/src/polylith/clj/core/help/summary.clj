@@ -10,8 +10,8 @@
     "    migrate                     Migrates the workspace to the latest format.\n"
     ""))
 
-(defn migrate-command [show-migrate?]
-  (if show-migrate?
+(defn migrate-command [migrate?]
+  (if migrate?
     "    poly migrate\n"
     ""))
 
@@ -84,7 +84,7 @@
 
 (seq [1])
 
-(defn print-example [show-migrate?]
+(defn print-example [migrate?]
   (println
     (str
       "  Example:\n"
@@ -137,7 +137,7 @@
       "    poly info ws-dir:another-ws\n"
       "    poly info ws-file:ws.edn\n"
       "    poly libs\n"
-      (migrate-command show-migrate?)
+      (migrate-command migrate?)
       "    poly shell\n"
       "    poly test\n"
       "    poly test :project\n"
@@ -168,11 +168,11 @@
       "    poly ws out:ws.edn")))
 
 (defn print-help [is-all toolsdeps1? commands color-mode]
-  (let [show-migrate? (or is-all toolsdeps1?)]
+  (let [migrate? (or is-all toolsdeps1?)]
     (print-intro color-mode)
-    (main-commands/print-table color-mode)
+    (main-commands/print-table color-mode migrate?)
     (shell-commands/print-table color-mode)
     (print-help-text color-mode)
     (print-example-shell)
     (print-custom-commands-example commands)
-    (print-example show-migrate?)))
+    (print-example migrate?)))

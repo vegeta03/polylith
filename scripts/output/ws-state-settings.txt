@@ -1,5 +1,6 @@
 {:active-profiles #{"default"},
  :color-mode "none",
+ :commands {},
  :compact-views #{},
  :default-profile-name "default",
  :empty-character ".",

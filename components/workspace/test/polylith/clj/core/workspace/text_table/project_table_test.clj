@@ -83,7 +83,7 @@
          (env-table/table workspace false false))))
 
 (deftest table--with-resources-flag--returns-correct-table
-  (is (= ["  project      alias  status   dev "
+  (is (= ["  project      alias  status   dev"
           "  --------------------------   ----"
           "  core *       core    sr--    s---"
           "  invoice *    inv     --t-    --t-"
@@ -100,11 +100,11 @@
          (env-table/table workspace true false))))
 
 (deftest table--with-profile--returns-correct-table
-  (is (= ["  project      alias  status   dev  default   "
-          "  --------------------------   ------------   "
-          "  core *       core    s--     s--    -t      "
-          "  invoice *    inv     -t-     -t-    --      "
-          "  development  dev     s--     s--    --      "]
+  (is (= ["  project      alias  status   dev  default"
+          "  --------------------------   ------------"
+          "  core *       core    s--     s--    -t"
+          "  invoice *    inv     -t-     -t-    --"
+          "  development  dev     s--     s--    --"]
          (env-table/table workspace-with-profiles false false))))
 
 (deftest table--with-profile-and-loc--returns-correct-table

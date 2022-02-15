@@ -51,7 +51,7 @@
     (or (x->spaces x) "#ERROR#")))
 
 (defn row [initial-spaces y xs x->spaces cells]
-  (str initial-spaces (str/join (mapv #(value % y x->spaces cells) xs))))
+  (str initial-spaces (str/trimr (str/join (mapv #(value % y x->spaces cells) xs)))))
 
 (defn table [initial-spaces cells color-mode]
   (let [aligned-cells (align-table cells color-mode)
@@ -59,4 +59,3 @@
         ys (sort (set (map #(-> % first second) aligned-cells)))
         x->spaces (into {} (map (juxt identity #(str-util/spaces (max-column-width % aligned-cells))) xs))]
     (mapv #(row initial-spaces % xs x->spaces aligned-cells) ys)))
-

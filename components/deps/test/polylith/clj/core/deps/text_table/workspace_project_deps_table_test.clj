@@ -4,10 +4,10 @@
             [polylith.clj.core.deps.text-table.project-deps-table :as table]))
 
 (deftest table--with-a-mix-of-dependencies
-  (is (= ["                              s      "
-          "                              c      "
-          "                              h      "
-          "                              e      "
+  (is (= ["                              s"
+          "                              c"
+          "                              h"
+          "                              e"
           "                        d     m     w"
           "                  a     e     a     e"
           "                  p  d  p     -     b"
