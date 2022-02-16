@@ -12,5 +12,5 @@
                       (map-indexed command-cells commands))]
     (text-table/table "    " color-mode cells)))
 
-(defn print-table [color-mode commands]
+(defn print-commands [color-mode commands]
   (text-table/print-table (table color-mode commands)))

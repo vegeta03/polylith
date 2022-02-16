@@ -63,26 +63,24 @@
       "  The color mode is taken from ~/.polylith/config.edn but can be overridden by passing\n"
       "  in " (s/key "color-mode:COLOR" cm) " where valid colors are " (s/key "none" cm) ", " (s/key "light" cm) ", and " (s/key "dark" cm) ".\n")))
 
-(defn print-example-shell []
+(defn print-custom-commands-example [commands]
+  (let [examples (mapcat #(-> % second :help :examples) commands)]
+    (when (seq examples)
+      (doseq [example examples]
+        (println (str "    " example)))
+      (println))))
+
+(defn print-example-shell [commands]
+  (println "  Example (shell only):")
+  (print-custom-commands-example commands)
   (println
     (str
-      "  Example (shell only):\n"
       "    switch-ws dir:~/myworkspace\n"
       "    switch-ws file:../../another/ws.edn\n"
       "    tap\n"
       "    tap open\n"
       "    tap clean\n"
       "    tap close\n")))
-
-(defn print-custom-commands-example [commands]
-  (let [examples (mapcat #(-> % second :help :examples) commands)]
-    (when (seq examples)
-      (println "  Example (custom commands):")
-      (doseq [example examples]
-        (println (str "    " example)))
-      (println))))
-
-(seq [1])
 
 (defn print-example [migrate?]
   (println
@@ -171,8 +169,7 @@
   (let [migrate? (or is-all toolsdeps1?)]
     (print-intro color-mode)
     (main-commands/print-table color-mode migrate?)
-    (shell-commands/print-table color-mode)
+    (shell-commands/print-table commands color-mode)
     (print-help-text color-mode)
-    (print-example-shell)
-    (print-custom-commands-example commands)
+    (print-example-shell commands)
     (print-example migrate?)))

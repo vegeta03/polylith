@@ -29,4 +29,4 @@
                          :description "Shows the workspace as data."}])))
 
 (defn print-table [color-mode migrate?]
-  (table/print-table color-mode (commands color-mode migrate?)))
+  (table/print-commands color-mode (commands color-mode migrate?)))
