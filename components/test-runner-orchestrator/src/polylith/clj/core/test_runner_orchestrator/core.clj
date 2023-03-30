@@ -14,8 +14,8 @@
 
 (defn resolve-deps [{:keys [name] :as project} settings is-verbose color-mode]
   (try
-    (into #{} (mapcat #(-> % second :paths))
-          (deps/resolve-deps project settings is-verbose))
+    (sort (into #{} (mapcat #(-> % second :paths))
+                    (deps/resolve-deps project settings is-verbose)))
     (catch Exception e
       (println (str "Couldn't resolve libraries for the " (color/project name color-mode) " project: " e))
       (throw e))))
