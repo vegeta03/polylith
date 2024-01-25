@@ -113,14 +113,18 @@
                    {:form form}
                    e))))))
 
-(defn ->test-opts [workspace
+(defn with-test-keys [changes projects]
+  (assoc changes :project-to-bricks-to-test (into {} (map (juxt :name :bricks-to-test) projects))
+                 :project-to-projects-to-test (into {} (map (juxt :name :projects-to-test) projects))))
+
+(defn ->test-opts [{:keys [projects :as workspace]}
                    changes
                    {:keys [test] :as project}
                    is-verbose
                    color-mode]
   {:workspace workspace
    :project project
-   :changes changes
+   :changes (with-test-keys changes projects)
    :test-settings test
    :is-verbose is-verbose
    :color-mode color-mode})
