@@ -1,0 +1,49 @@
+// master.adoc
+:doctype: book
+= Polylith Architecture
+
+include::readme.adoc[]
+
+== Introduction
+include::introduction.adoc[]
+
+== Install
+include::install.adoc[]
+
+== Upgrade
+include::upgrade.adoc[]
+
+== Example systems
+include::example-systems.adoc[]
+
+== Production systems
+include::production-systems.adoc[]
+
+== Workspace
+include::workspace.adoc[]
+
+== Development
+include::development.adoc[]
+
+== Component
+include::component.adoc[]
+
+== Interface
+include::interface.adoc[]
+
+== Base
+include::base.adoc[]
+
+== Project
+include::project.adoc[]
+
+== Shell
+include::shell.adoc[]
+
+== Doc
+include::doc.adoc[]
+
+== Tap
+include::tap.adoc[]
+
+== Tools.deps

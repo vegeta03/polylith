@@ -1,0 +1,139 @@
+= Project Documentation
+Author Name
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectlinks:
+:icons: font
+
+include::readme.adoc[]
+
+== Introduction
+include::introduction.adoc[]
+
+== Install
+include::install.adoc[]
+
+== Upgrade
+include::upgrade.adoc[]
+
+== Example Systems
+include::example-systems.adoc[]
+
+== Production Systems
+include::production-systems.adoc[]
+
+== Workspace
+include::workspace.adoc[]
+
+== Development
+include::development.adoc[]
+
+== Component
+include::component.adoc[]
+
+== Interface
+include::interface.adoc[]
+
+== Base
+include::base.adoc[]
+
+== Project
+include::project.adoc[]
+
+== Shell
+include::shell.adoc[]
+
+== Documentation
+include::doc.adoc[]
+
+== Tap
+include::tap.adoc[]
+
+== Tools.deps
+include::tools-deps.adoc[]
+
+== Build
+include::build.adoc[]
+
+== Git
+include::git.adoc[]
+
+== Tagging
+include::tagging.adoc[]
+
+== Flags
+include::flags.adoc[]
+
+== Testing
+include::testing.adoc[]
+
+== Test Runners
+include::test-runners.adoc[]
+
+== Profile
+include::profile.adoc[]
+
+== Dependencies
+include::dependencies.adoc[]
+
+== Libraries
+include::libraries.adoc[]
+
+== Configuration
+include::configuration.adoc[]
+
+== Validations
+include::validations.adoc[]
+
+== State
+include::state.adoc[]
+
+== Source Code
+include::source-code.adoc[]
+
+== Artifacts
+include::artifacts.adoc[]
+
+== Explore the Workspace
+include::explore-the-workspace.adoc[]
+
+== Polyx
+include::polyx.adoc[]
+
+== Naming
+include::naming.adoc[]
+
+== Git Hooks
+include::git-hooks.adoc[]
+
+== Colors
+include::colors.adoc[]
+
+== Developing Polylith
+include::developing-poly.adoc[]
+
+== CI
+
+=== Continuous Integration
+include::continuous-integration.adoc[]
+
+=== Polylith CI Setup
+include::polylith-ci-setup.adoc[]
+
+== Reference
+
+=== Commands
+include::commands.adoc[]
+
+=== Workspace Structure
+include::workspace-structure.adoc[]
+
+== Versions
+include::versions.adoc[]
+
+== Contact
+include::contact.adoc[]
+
+== License
+include::license.adoc[]

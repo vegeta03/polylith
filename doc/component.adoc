@@ -1,3 +1,4 @@
+// component.adoc
 = Component
 
 If you have been following our xref:introduction.adoc[tutorial], you should now have:
@@ -117,7 +118,7 @@ The `poly` tool leaves this task to you as a developer.
 Our philosophy is to leave the editing of files to you.
 While we are happy to generate files for you, we want to give you complete control over changing your files.
 
-[[add-to-deps-edn]]
+[[add-to-deps-edn-component]]
 Let's listen to the helpful reminder.
 Add the `user` component to your `./deps.edn`:
 
@@ -259,7 +260,7 @@ If your IDE doesn't include support for `:local/root` dependencies, and you are 
 <1> `user` component `src` added as a path
 <2> `user` component `resources` added as a path
 
-If at all possible, we recommend you add xref:#add-to-deps-edn[components as dependencies] instead of paths for these reasons:
+If at all possible, we recommend you add xref:#add-to-deps-edn-component[components as dependencies] instead of paths for these reasons:
 
 * It's more readable.
 

@@ -1,3 +1,4 @@
+// commands.adoc
 = Commands
 :toc:
 
@@ -192,8 +193,7 @@ poly help
     poly ws out:ws.edn
 ----
 
-[#check]
-=== check
+== check
 
 [source,text]
 ----
@@ -290,8 +290,7 @@ poly help
     See an example here: https://github.com/polyfy/polylith/blob/master/workspace.edn
 ----
 
-[#create]
-=== create
+== create
 
 [source,text]
 ----
@@ -314,11 +313,11 @@ poly help
     poly create base name:mybase
     poly create project name:myproject
     poly create workspace name:myws top-ns:com.my.company
+    poly create workspace name:myws top-ns:com.my.company :commit
     poly create workspace name:myws top-ns:com.my.company branch:master
 ----
 
-[#create-component]
-=== create component
+== create component
 
 [source,text]
 ----
@@ -340,8 +339,7 @@ poly help
     poly create component name:admin interface:user
 ----
 
-[#create-base]
-=== create base
+== create base
 
 [source,text]
 ----
@@ -360,8 +358,7 @@ poly help
     poly create base name:mybase :git-add
 ----
 
-[#create-project]
-=== create project
+== create project
 
 [source,text]
 ----
@@ -379,8 +376,7 @@ poly help
     poly create project name:myproject :git-add
 ----
 
-[#create-workspace]
-=== create workspace
+== create workspace
 
 [source,text]
 ----
@@ -411,8 +407,7 @@ poly help
     poly create workspace name:myws top-ns:com.my.company branch:master :commit
 ----
 
-[#deps]
-=== deps
+== deps
 
 [source,text]
 ----
@@ -442,11 +437,11 @@ poly help
     poly deps brick:mybrick
     poly deps project:myproject
     poly deps project:myproject brick:mybrick
+    poly deps :swap-axes
     poly deps out:deps.txt
 ----
 
-[#deps-brick]
-=== deps :brick
+== deps :brick
 
 [source,text]
 ----
@@ -472,8 +467,7 @@ poly help
     poly deps brick:mybrick out:deps.txt
 ----
 
-[#deps-project]
-=== deps :project
+== deps :project
 
 [source,text]
 ----
@@ -513,8 +507,7 @@ poly help
     poly deps project:myproject out:deps.txt
 ----
 
-[#deps-workspace]
-=== deps :workspace
+== deps :workspace
 
 [source,text]
 ----
@@ -548,8 +541,7 @@ poly help
     poly deps out:deps.txt
 ----
 
-[#deps-project-brick]
-=== deps :project :brick
+== deps :project :brick
 
 [source,text]
 ----
@@ -577,8 +569,7 @@ poly help
     poly deps project:myproject brick:mybrick out:deps.txt
 ----
 
-[#diff]
-=== diff
+== diff
 
 [source,text]
 ----
@@ -625,8 +616,7 @@ poly help
     poly diff since:previous-release
 ----
 
-[#doc]
-=== doc
+== doc
 
 [source,text]
 ----
@@ -665,8 +655,7 @@ poly help
     poly doc more:workspaces:realworld
 ----
 
-[#info]
-=== info
+== info
 
 [source,text]
 ----
@@ -789,7 +778,7 @@ poly help
   5. interface  brick    cl    dev  admin
      -----------------   ---   ----------
      payer      payer    s--   st-   --
-     user       admin    s--   ---   st
+     user       admin    s--   ---   s-
      user       user *   ---   st-   --
      util       util     s--   st-   --
      -          cli      s--   st-   --
@@ -865,8 +854,7 @@ poly help
     poly info ws-file:ws.edn
 ----
 
-[#libs]
-=== libs
+== libs
 
 [source,text]
 ----
@@ -935,8 +923,7 @@ poly help
     poly doc page:libraries
 ----
 
-[#overview]
-=== overview
+== overview
 
 [source,text]
 ----
@@ -965,8 +952,7 @@ poly help
     clojure -M:polyx overview out:overview.jpg :no-changes
 ----
 
-[#shell]
-=== shell
+== shell
 
 [source,text]
 ----
@@ -1020,8 +1006,7 @@ poly help
     poly doc page:shell
 ----
 
-[#switch-ws]
-=== switch-ws
+== switch-ws
 
 [source,text]
 ----
@@ -1050,8 +1035,7 @@ poly help
     switch-ws via:myworkspace
 ----
 
-[#tap]
-=== tap
+== tap
 
 [source,text]
 ----
@@ -1074,8 +1058,7 @@ poly help
     doc page:tap
 ----
 
-[#test]
-=== test
+== test
 
 [source,text]
 ----
@@ -1145,8 +1128,7 @@ poly help
     poly doc page:test-runners
 ----
 
-[#version]
-=== version
+== version
 
 [source,text]
 ----
@@ -1171,8 +1153,7 @@ poly help
     poly doc ws:version
 ----
 
-[#ws]
-=== ws
+== ws
 
 [source,text]
 ----
@@ -1209,6 +1190,7 @@ poly help
     poly ws
     poly ws get:keys
     poly ws get:count
+    poly ws get:configs
     poly ws get:settings
     poly ws get:user-input:args
     poly ws get:user-input:args:0
@@ -1223,4 +1205,3 @@ poly help
     poly doc ws
     poly doc ws:components
 ----
-

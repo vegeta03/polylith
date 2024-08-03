@@ -1,3 +1,5 @@
+// install.adoc
+:doctype: book
 = Install
 :toc:
 :poly-version: 0.2.18
@@ -27,8 +29,7 @@ h| Switch `poly` version via:
 
 h| Pre-compiled for faster startup? link:#startup-time[^1^]
 | Yes
-| No
-| No
+| No 
 
 |===
 
@@ -152,7 +153,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 [source,shell,subs="attributes+"]
 ----
 @echo off
-start /wait /b java %JAVA_OPTS% -jar "C:\Program Files\Polylith\poly-poly-{poly-version}.jar" %*
+start /wait /b java %JAVA_OPTS% -jar "C:\Program Files\Polylith\poly-{poly-version}.jar" %*
 ----
 Double-check that it references the correct poly jar.
 * Add `C:\Program Files\Polylith` to the Windows `Path` environment variable.

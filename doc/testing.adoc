@@ -1,3 +1,4 @@
+// testing.adoc
 = Testing
 :toc:
 
@@ -357,7 +358,7 @@ example
 // scripts/sections/testing/dummy_test.clj
 [source,clojure]
 ----
-(ns project.command-line.dummy_test ;; <1>
+(ns project.command-line.dummy-test ;; <1>
   (:require [clojure.test :refer :all]))
 
 (deftest dummy-test

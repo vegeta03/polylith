@@ -1,3 +1,4 @@
+// base.adoc
 = Base
 
 A `base` is similar to a xref:component.adoc[component] except for two things:
@@ -67,7 +68,7 @@ example
 ----
 <1> new `cli` base
 
-[[add-to-deps-edn]]
+[[add-to-deps-edn-base]]
 Edit your `./deps.edn` to add your newly created base:
 
 [source,clojure]

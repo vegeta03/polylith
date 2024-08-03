@@ -1,3 +1,4 @@
+// project.adoc
 = Project
 
 There are two kinds of `projects` in Polylith: development and deployable.
@@ -126,7 +127,7 @@ Each `./projects/**/deps.edn` specifies what bricks to include via `:local/root`
 The `poly` xref:commands.adoc[test] command determines the appropriate test dependencies from each referenced brick's `deps.edn`.
 
 But Clojure's tools.deps does not include test dependencies from `:local/root` dependencies.
-To support IDEs and other tooling, you must compensate by adding your brick tests as separate paths in your `./deps.edn`, just as you did for your xref:component.adoc#add-to-deps-edn[user component] and xref:base.adoc#add-to-deps-edn[cli base].
+To support IDEs and other tooling, you must compensate by adding your brick tests as separate paths in your `./deps.edn`, just as you did for your xref:component.adoc#add-to-deps-edn-component[user component] and xref:base.adoc#add-to-deps-edn-base[cli base].
 ====
 
 Where you specify dependency to bricks differs based on the project type:

@@ -256,10 +256,10 @@ Inkscape's native format is `.svg`.
 We export to `.png` for use in our documentation.
 We keep the source `.svg` beside the exported `.png` in our GitHub repo.
 
-We store doc images under `./doc/images/`, for example for the overview diagram in xref:/doc/doc.adoc[./doc/doc.adoc] doc:
+We store doc images under `./images/`, for example for the overview diagram in xref:/doc/doc.adoc[./doc/doc.adoc] doc:
 
-* Inkscape source: link:/doc/images/doc/doc-overview.svg[./doc/images/doc/doc-overview.svg]
-* Exported png: link:/doc/images/doc/doc-overview.png[./doc/images/doc/doc-overview.png]
+* Inkscape source: link:/images/doc/doc-overview.svg[./images/doc/doc-overview.svg]
+* Exported png: link:/images/doc/doc-overview.png[./images/doc/doc-overview.png]
 
 Generated images (currently from `bb create-example` via `polyx`) are grouped with their related images but are prefixed with an `output` dir.
 This strategy helps us distinguish hand-crafted images from generated ones and reminds us not to edit images in the `output` dirs.
@@ -462,7 +462,7 @@ This will generate a `polylith.mp4` file:
 
 [source,shell]
 ----
-gource --seconds-per-day 0.2 --auto-skip-seconds 1 --max-file-lag 0.1 --background 9dabcb --logo doc/images/developing-polylith/logo.png --disable-bloom --font-size 18 --font-colour 566ca1 --hide filenames --date-format "%d %B %Y" --dir-colour eeeeee --dir-name-depth 2 --caption-colour ff0000 --dir-font-size 12 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 polylith2.mp4
+gource --seconds-per-day 0.2 --auto-skip-seconds 1 --max-file-lag 0.1 --background 9dabcb --logo images/developing-polylith/logo.png --disable-bloom --font-size 18 --font-colour 566ca1 --hide filenames --date-format "%d %B %Y" --dir-colour eeeeee --dir-name-depth 2 --caption-colour ff0000 --dir-font-size 12 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 polylith2.mp4
 ----
 
 You can also experiment without generating a file:
@@ -473,7 +473,7 @@ gource --seconds-per-day 0.2 \
        --auto-skip-seconds 1 \
        --max-file-lag 0.1 \
        --background 9dabcb \
-       --logo doc/images/developing-polylith/logo.png \
+       --logo images/developing-polylith/logo.png \
        --disable-bloom \
        --font-size 18 \
        --font-colour 566ca1 \
