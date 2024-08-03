@@ -1,4 +1,4 @@
-= Dependencies
+== Dependencies
 :toc:
 
 When we talk about `poly` dependencies, we refer to dependencies between bricks (xref:component.adoc[components] and xref:base.adoc[bases]).

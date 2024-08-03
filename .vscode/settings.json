@@ -16,5 +16,6 @@
           ]
         }
       },
-  ]
+  ],
+  "asciidoc.antora.enableAntoraSupport": true
 }

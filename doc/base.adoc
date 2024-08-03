@@ -1,5 +1,5 @@
 // base.adoc
-= Base
+== Base
 
 A `base` is similar to a xref:component.adoc[component] except for two things:
 

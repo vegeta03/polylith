@@ -1,5 +1,4 @@
-= Doc
-:toc:
+== Doc
 
 The `poly` tool includes a xref:commands.adoc#doc[doc] command to open web-based documentation.
 The xref:shell.adoc[shell]'s autocompletion support makes listing and accessing different parts of the documentation a breeze, so go ahead and xref:shell.adoc#launch[start one up]:
@@ -90,7 +89,7 @@ Doc categories:
 Let's dig into these categories.
 
 [[page]]
-== page
+=== page
 
 Use the `page` argument to open a specific `poly` tool documentation page in your web browser.
 Notice that the shell lists all pages:
@@ -125,7 +124,7 @@ doc page:flags
 ----
 
 [[help]]
-== help
+=== help
 
 The `help` argument takes you to the `poly` xref:commands.adoc[commands] documentation:
 
@@ -169,7 +168,7 @@ example$ help check
 ====
 
 [[ws]]
-== ws
+=== ws
 
 The `ws` argument takes you to the xref:workspace-structure.adoc[Workspace structure] documentation:
 
@@ -199,7 +198,7 @@ example$ doc ws:configs
 ----
 
 [[more]]
-== more
+=== more
 
 The `more` argument covers all other documentation and links that are not specifically about the `poly` tool:
 
@@ -214,7 +213,7 @@ podcasts      workspaces
 
 Let's dig into the different categories:
 
-=== blog posts
+==== blog posts
 
 Open blog posts via:
 
@@ -265,7 +264,7 @@ understanding-polylith-through-the-lens-of-hexagonal-architecture
 
 |===
 
-=== high-level
+==== high-level
 
 Open https://polylith.gitbook.io/polylith[conceptual, high-level] documentation:
 
@@ -307,11 +306,11 @@ Open a specific page, for example, the https://polylith.gitbook.io/polylith/conc
 example$ doc more:high-level:faq
 ----
 
-=== in japanese
+==== in japanese
 
 https://x.com/shinseitaro[Shinsei Taro] (しんせいたろう) has translated and reworked version 0.2.19 of the `poly` tool in Japanese, https://zenn.dev/shinseitaro/books/clojure-polylith[here].
 
-=== podcasts
+==== podcasts
 
 You can open the https://podcasts.apple.com/se/podcast/s4-e21-polylith-with-joakim-james-and-furkan-part-1/id1461500416?i=1000505948894[first episode] of the only podcast we have with:
 
@@ -334,7 +333,7 @@ example$ doc more:podcasts:polylith-with-joakim-james-and-furkan:part1
 
 |===
 
-=== python tool
+==== python tool
 
 https://github.com/DavidVujic[David Vujic] has created https://davidvujic.github.io/python-polylith-docs[Polylith tools for Python]:
 
@@ -343,7 +342,7 @@ https://github.com/DavidVujic[David Vujic] has created https://davidvujic.github
 example$ doc more:python-tool
 ----
 
-=== slack
+==== slack
 
 Reach out to the https://polylith.gitbook.io/polylith/conclusion/who-made-polylith[Polylith team]
 in the https://clojurians.slack.com/archives/C013B7MQHJQ[#polylith] channel
@@ -355,7 +354,7 @@ example$ doc more:slack
 ----
 
 [#videos]
-=== videos
+==== videos
 
 You can list available videos with:
 
@@ -400,7 +399,7 @@ the-last-architecture-you-will-ever-need
 
 |===
 
-=== workspaces
+==== workspaces
 
 List example poly workspace with:
 

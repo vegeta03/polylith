@@ -1,4 +1,4 @@
-= Developing poly
+== Developing poly
 :toc:
 
 The curious are most welcome, but we wrote this document for folks who are (or want to) contribute to the development `poly` itself.

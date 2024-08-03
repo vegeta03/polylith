@@ -1,4 +1,4 @@
-= Versions
+== Versions
 
 There are four areas that are version controlled, which is described xref:workspace-structure.adoc#version[here].
 

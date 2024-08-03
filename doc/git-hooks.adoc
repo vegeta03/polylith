@@ -1,4 +1,4 @@
-= Git Hook
+== Git Hook
 
 You can use https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks[git hooks] to have Git invoke custom scripts for specific Git events.
 

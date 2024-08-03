@@ -1,4 +1,4 @@
-= The Polylith CI setup
+== The Polylith CI setup
 :cljdoc-api-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/api
 :cljdoc-doc-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/doc
 

@@ -1,7 +1,4 @@
 // install.adoc
-:doctype: book
-= Install
-:toc:
 :poly-version: 0.2.18
 :cljdoc-api-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/api
 
@@ -43,7 +40,7 @@ If you are installing git for the first time, don't forget to configure your git
 :post-install: pass:n[You will soon create your first xref:workspace.adoc[workspace] - for now, only `version`, `help`, `doc`, and `create workspace` commands will work.]
 
 [#install-on-mac]
-== Install as Stand-alone on macOS
+=== Install as Stand-alone on macOS
 
 {prerequisites}
 
@@ -68,7 +65,7 @@ Verify the installation by running `poly help`.
 {post-install}
 
 [#install-on-linux]
-== Install as Stand-alone on Linux
+=== Install as Stand-alone on Linux
 
 {prerequisites}
 
@@ -103,11 +100,11 @@ Verify the installation by running `poly help`.
 {post-install}
 
 [#install-on-windows]
-== Install Stand-alone on Windows
+=== Install Stand-alone on Windows
 
 {prerequisites}
 
-=== Troubleshooting Clojure CLI Install on Windows
+==== Troubleshooting Clojure CLI Install on Windows
 
 TIP: If you are running on Windows, you might prefer to use the more user-friendly https://github.com/casselc/clj-msi[clj-msi].
 
@@ -144,7 +141,7 @@ see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ----
 
-=== Install the poly tool
+==== Install the poly tool
 
 * Download the https://github.com/polyfy/polylith/releases/latest[latest release] of the poly jar, e.g., `poly-{poly-version}.jar`.
 * Create a `Polylith` directory, e.g., `C:\Program Files\Polylith`, and copy the poly jar file to that directory.
@@ -165,7 +162,7 @@ Test the installation by typing `poly help` from the command line.
 NOTE: The xref:colors.adoc[coloring] of text is not supported on Windows.
 
 [#install-via-nix]
-== Install as Stand-alone via Nix
+=== Install as Stand-alone via Nix
 
 {prerequisites}
 
@@ -183,7 +180,7 @@ Test the installation by typing `poly help` from the command line.
 {post-install}
 
 [#use-as-dependency]
-== Use as Dependency
+=== Use as Dependency
 
 An alternative way to run the `poly` tool is as a dependency from the `:poly` alias in your `./deps.edn` file.
 
@@ -211,7 +208,7 @@ TIP: If you have no interest in using any stand-alone variant of `poly` and want
 For more details on how `poly` is released, see docs on xref:polylith-ci-setup.adoc#releases[releases].
 
 [#github-dependency]
-=== Using a Git Dependency
+==== Using a Git Dependency
 If you wish, you can specify a git dep revision from the GitHub Polylith project.
 To do so, you'd adjust your `./deps.edn` `:poly` alias to something like:
 
@@ -230,7 +227,7 @@ Replace `INSERT-SHA-HERE` with a commit SHA from the Polylith repository, for ex
 (Alternatively, you can specify the latest `SNAPSHOT` release as a maven dependency)
 2. Or some commit SHA from a work-in-progress branch you want to try
 
-=== Specifying Logging Libraries
+==== Specifying Logging Libraries
 You can add in the logging libraries you'd like to use with `poly` by adjusting your `:poly` alias in your `./deps.edn` like so:
 
 [source,clojure]
@@ -242,13 +239,13 @@ You can add in the logging libraries you'd like to use with `poly` by adjusting 
                   :main-opts  ["-m" "polylith.clj.core.poly-cli.core"]}}
 ----
 
-== Use as a library
+=== Use as a library
 [#use-as-a-library]
 
 The `poly` functionality can also be accessed as a library.
 The API is documented link:{cljdoc-api-url}/polylith[here].
 
 [#jvm-options]
-== JVM options
+=== JVM options
 You might want to specify more RAM to the `poly` tool and/or where the configuration file for logging is located.
 These can be conveyed via the `JVM_OPTS` environment variable which `poly` will passes along to the Java runtime at launch of poly stand-alone.

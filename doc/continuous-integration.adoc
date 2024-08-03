@@ -1,4 +1,4 @@
-= Continuous Integration
+== Continuous Integration
 :toc:
 
 The `poly` tool stays out of your way on how you xref:build.adoc[build] your xref:project.adoc[deployable project] xref:artifacts.adoc[artifacts] on your continuous integration server.

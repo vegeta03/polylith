@@ -1,4 +1,4 @@
-= State
+== State
 
 Managing the lifecycle and dependencies of stateful parts of your system can be complex and error-prone. State management tools like https://github.com/stuartsierra/component[Component], https://github.com/weavejester/integrant[Integrant], and https://github.com/tolitius/mount[Mount] can help you with this by providing a structured way to handle initialization, configuration, and dependencies.
 

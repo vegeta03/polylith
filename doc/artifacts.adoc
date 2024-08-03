@@ -1,4 +1,4 @@
-= Artifacts
+== Artifacts
 :cljdoc-api-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/api
 
 We assemble our bricks (xref:component.adoc[components] and xref:base.adoc[bases]) in xref:project.adoc[deployable projects] from which we build artifacts.

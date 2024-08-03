@@ -1,4 +1,4 @@
-= Polyx
+== Polyx
 :toc:
 :toclevels: 3
 

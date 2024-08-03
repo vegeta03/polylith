@@ -1,11 +1,9 @@
-= Production Systems
-
 Here, we list some companies that use Polylith in production.
 
 TIP: The `info`, `deps`, and `libs` reports on this page were generated with xref:polyx.adoc[polyx] and its xref:commands.adoc#overview[overview] command.
 We cover `polyx` and these reports later in the documentation.
 
-== Scrintal
+=== Scrintal
 
 image::images/production-systems/scrintal.png[link="images/production-systems/scrintal.png"]
 
@@ -13,7 +11,7 @@ http://scrintal.com[Scrintal's] first commit dates back to April 2019 and the wo
 Polylith enabled us to experiment fast locally and ship features easily.
 The complete buy-in to Polylith paid off when we started pivoting our product at the end of 2020, as even though we are changing it to a completely new product, most bricks can be shared and reused across all our products.
 
-== World Singles Networks
+=== World Singles Networks
 
 image::images/production-systems/world-singles-networks.png[link="images/production-systems/world-singles-networks.png"]
 
@@ -29,7 +27,7 @@ and focus more on the importance of naming -- making it easier to find existing 
 
 The concept of "swappable implementations" for component interfaces has allowed us to more easily share code between a variety of applications that need to run in difference contexts, such as running without a database, or on older JVMs.
 
-== Greenlabs
+=== Greenlabs
 
 image::images/production-systems/greenlabs.png[link="images/production-systems/greenlabs.png"]
 
@@ -40,7 +38,7 @@ Our codebase is 93K lines of Clojure.
 We have chosen an event-driven architecture for backend systems, with Kafka at the center and a bunch of AWS Lambdas around it.
 Thanks to Polylith, we've been able to easily manage and deploy multiple serverless projects from a single repository. It's especially helpful for modularizing code and understanding dependencies.
 
-== Polylith
+=== Polylith
 
 image::images/production-systems/polylith.png[link="images/production-systems/polylith.png"]
 
@@ -51,7 +49,7 @@ We made our initial commit on June 9, 2019.
 The Polylith way of working gives us a range of benefits, such as decoupled building blocks that are easy to find, change, reuse, and reason about.
 We combine these building blocks to create the `poly` and `polyx` command line tools, and the `clj-poly` library.
 
-== Add your Company Here!
+=== Add your Company Here!
 
 Please get in touch with us if you use Polylith and don't see your company here!
 

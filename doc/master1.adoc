@@ -1,11 +1,12 @@
-= Project Documentation
-Author Name
+= Polylith Poly tool documention
+Polylith Team
 :doctype: book
 :toc: left
 :toclevels: 3
 :sectlinks:
 :icons: font
 
+== Readme
 include::readme.adoc[]
 
 == Introduction
@@ -17,10 +18,10 @@ include::install.adoc[]
 == Upgrade
 include::upgrade.adoc[]
 
-== Example Systems
+== Example systems
 include::example-systems.adoc[]
 
-== Production Systems
+== Production systems
 include::production-systems.adoc[]
 
 == Workspace
@@ -44,7 +45,7 @@ include::project.adoc[]
 == Shell
 include::shell.adoc[]
 
-== Documentation
+== Doc
 include::doc.adoc[]
 
 == Tap
@@ -89,13 +90,13 @@ include::validations.adoc[]
 == State
 include::state.adoc[]
 
-== Source Code
+== Source code
 include::source-code.adoc[]
 
 == Artifacts
 include::artifacts.adoc[]
 
-== Explore the Workspace
+== Explore the workspace
 include::explore-the-workspace.adoc[]
 
 == Polyx
@@ -104,29 +105,27 @@ include::polyx.adoc[]
 == Naming
 include::naming.adoc[]
 
-== Git Hooks
+== Git hooks
 include::git-hooks.adoc[]
 
 == Colors
 include::colors.adoc[]
 
-== Developing Polylith
+== Developing poly
 include::developing-poly.adoc[]
 
 == CI
-
 === Continuous Integration
 include::continuous-integration.adoc[]
 
-=== Polylith CI Setup
+=== Polylith CI setup
 include::polylith-ci-setup.adoc[]
 
 == Reference
-
 === Commands
 include::commands.adoc[]
 
-=== Workspace Structure
+=== Workspace structure
 include::workspace-structure.adoc[]
 
 == Versions

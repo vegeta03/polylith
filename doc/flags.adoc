@@ -1,4 +1,4 @@
-= Flags
+== Flags
 :toc:
 
 You've seen output from the xref:commands.adoc#info[info] command, but we haven't explained flags:
@@ -39,7 +39,7 @@ We'll cover the `x` flag in more detail when we get to xref:testing.adoc[Testing
 NOTE: For the sake of simplicity, we'll describe the presence of sources as a single `src` directory and the presence of tests as a single `test` directory.
 In reality, projects and bricks can choose to have multiple or different source and test paths.
 
-== Project Flags
+=== Project Flags
 
 From our example above:
 
@@ -48,7 +48,7 @@ image::images/flags/projects.png[width=299]
 The `info` command outputs a table summarizing xref:project.adoc[projects].
 There is one row for each project and a `status` and `dev` column for flags.
 
-=== Projects `status` Column Flags
+==== Projects `status` Column Flags
 
 [%autowidth]
 |===
@@ -80,7 +80,7 @@ The `status` flags `s--` for `development` means `poly` sees:
 . no `./development/test` directory
 . no reasons to run tests for this project
 
-=== Projects `dev` Column Flags
+==== Projects `dev` Column Flags
 
 [%autowidth]
 |===
@@ -125,7 +125,7 @@ Yes.
 TIP: The `development` project exists to support development.
 It would be unusual for it to have tests of its own.
 
-== Brick Flags
+=== Brick Flags
 
 From our example above:
 
@@ -151,7 +151,7 @@ a| The `poly test` command will run tests for this brick from the project in thi
 
 |===
 
-=== Bricks Deployable Projects Columns
+==== Bricks Deployable Projects Columns
 
 From our example above:
 
@@ -188,7 +188,7 @@ And, in turn, the relevant `components/user/deps.edn` and `bases/cli/deps.edn` c
 ----
 ****
 
-=== Bricks `dev` Project Column
+==== Bricks `dev` Project Column
 
 From our example above:
 
@@ -214,7 +214,7 @@ To remind you of how `src` and `test` are referenced, the relevant portion of ou
 ****
 
 [[r-flag]]
-== The optional `r` flag
+=== The optional `r` flag
 
 If you execute `poly info :resources` (or the shorter `poly info :r`):
 

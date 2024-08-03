@@ -1,5 +1,4 @@
-= Shell
-:toc:
+== Shell
 :poly-version: 0.2.18
 
 Not only does the `shell` make you more productive, but it's also fun to use!
@@ -10,7 +9,7 @@ Let's explore some shell features.
 TIP: Our examples assume you are exploring from our ongoing xref:introduction.adoc[tutorial] `example` xref:workspace.adoc[workspace].
 
 [[launch]]
-== Launching
+=== Launching
 
 Start a shell by typing `poly` from your workspace root directory (xref:component.adoc#shell-is-default[shell is the default command]):
 
@@ -20,14 +19,14 @@ Notice that the `example$` prompt includes your current workspace name.
 From here, you can run commands and get instant feedback.
 
 [[quit]]
-== Quitting
+=== Quitting
 
 To quit the shell, type `exit` or `quit` or press either of:
 
 * kbd:[Ctrl+C]
 * kbd:[Ctrl+D] (if not on Windows)
 
-== Let's Play
+=== Let's Play
 
 xref:#launch[Launch a poly shell] and play along.
 
@@ -77,14 +76,14 @@ Press kbd:[Enter] to choose the item at the cursor:
 
 image::images/shell/shell-move-cursor-and-select.png[width=600]
 
-== The Dash Item
+=== The Dash Item
 
 The `brick` argument shows you all available bricks.
 Selecting the `-` (the dash character) tells `poly` you want no bricks selected (e.g., for testing):
 
 image::images/shell/shell-info-brick.png[width=600]
 
-== Using Autocomplete to Explore
+=== Using Autocomplete to Explore
 
 Autocomplete really shines when there are many available suggestions.
 The xref:commands.adoc#ws[ws] command offers a good example.
@@ -106,7 +105,7 @@ You can continue navigating down into the workspace structure to find the inform
 
 image::images/shell/shell-ws-get-browse.png[width=600]
 
-== Switching Workspace
+=== Switching Workspace
 
 When you start a shell from a workspace root directory (where the `workspace.edn` file lives), the workspace is automatically loaded, and you can execute all available commands against it.
 
@@ -154,7 +153,7 @@ image::images/shell/shell-switch-ws.png[width=600]
 [[refresh-ws]]
 If you invoke `switch-ws` again when you are already on the root, this will read the workspace from disk again, which can be useful in some situations.
 
-=== Switching to an Exported Workspace
+==== Switching to an Exported Workspace
 
 You can switch to an exported workspace.
 
@@ -194,7 +193,7 @@ NOTE: The `poly` tool supports reading old exported files, with older xref:versi
 This is also true when reading an older version of a workspace, e.g. if you go back in the git history with git https://git-scm.com/docs/git-checkout[checkout] or https://git-scm.com/docs/git-switch[switch].
 
 [[switch-workspace]]
-=== Switching workspace by name ===
+==== Switching workspace by name
 
 If you have workspaces xref:workspace.adoc#sub-workspaces[within] your workspace, other cloned workspaces, or  workspaces exported to file, there is a convenient way to access these from the shell.
 
@@ -252,7 +251,7 @@ file:another-ws
 
 This is equivalent to `switch-ws file:../sandbox/another-ws.edn`.
 
-=== Switch at Launch
+==== Switch at Launch
 
 You can launch a shell and immediately switch to a workspace:
 
@@ -262,7 +261,7 @@ image::images/shell/shell-open-realworld.png[width=600]
 
 image::images/shell/shell-open-usermanager.png[width=600]
 
-=== Workspace Switch Mechanics
+==== Workspace Switch Mechanics
 
 Knowing how the shell supports workspace switching can be helpful.
 It is pretty simple:
@@ -270,7 +269,7 @@ It is pretty simple:
 * After switching to workspace dir `D`, the shell silently appends `ws-dir:D` to each command before it runs it.
 * After switching to workspace export file `F`, the shell silently appends `ws-file:F` to each command before it runs it.
 
-== Autocomplete Examples
+=== Autocomplete Examples
 
 Autocomplete helps you execute different commands with the correct arguments:
 
@@ -361,9 +360,9 @@ app-state        department       schema-fixture   web
 database         schema           user             web-server
 ----
 
-== Limitations
+=== Limitations
 
-=== Browsing Directories
+==== Browsing Directories
 
 When browsing the file system from the `dir:` argument, there are a couple of things worth mentioning:
 
@@ -396,7 +395,7 @@ example$ switch-ws dir:"
 "foo bar baz"/
 ----
 
-=== Creating a Workspace
+==== Creating a Workspace
 
 The poly shell will not suggest `workspace` for the xref:commands.adoc#create[create] command when already associated with a workspace:
 [source,text]

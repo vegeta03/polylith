@@ -1,4 +1,3 @@
-== Introduction
 :cljdoc-doc-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/doc
 
 ifndef::env-cljdoc[]

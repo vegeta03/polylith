@@ -1,4 +1,4 @@
-= Workspace Structure
+== Workspace Structure
 :toc:
 :poly-version: 0.2.18
 :cljdoc-api-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/api

@@ -1,4 +1,4 @@
-= Libraries
+== Libraries
 :toc:
 
 When we talk about `poly` libraries, we refer to 3rd-party library dependencies used by xref:component.adoc[components], xref:base.adoc[bases], and xref:project.adoc[projects].

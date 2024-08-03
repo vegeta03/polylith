@@ -1,4 +1,4 @@
-= Interface
+== Interface
 
 Component interfaces give many benefits:
 
@@ -19,7 +19,7 @@ Looking at our example `user` component, if you exclude the top namespace, in Po
 The interface defines `def`, `defn`, or `defmacro` statements which form the contract that it exposes to other components and bases.
 
 [[one-interface-in-multiple-components]]
-== Declaring the Same Interface in Multiple Components
+=== Declaring the Same Interface in Multiple Components
 
 Let's pretend we have the interface namespace `user.interface` containing the functions `fun1` and `fun2` and that two components `user` and `admin` implement this interface, e.g,:
 
@@ -82,7 +82,7 @@ Luckily, the `poly` tool will help us keep them consistent and complain if they 
 
 |===
 
-== Splitting an Interface into Sub-Namespaces
+=== Splitting an Interface into Sub-Namespaces
 
 We often choose to have a single `interface` namespace in a component, but dividing the interface into several sub-namespaces is possible.
 To do so, create an `interface` package (directory) with the name `interface` at the component root and then add the sub-namespaces.
@@ -123,7 +123,7 @@ Here's an example of the sub-interface usage from the https://github.com/furkan3
 
 TIP: Every time you are tempted to split up an interface into sub-namespaces, instead consider splitting the component into smaller components!
 
-== Delegation
+=== Delegation
 
 The most common way of structuring code in components is to delegate calls from the interface to one or more implementing namespaces.
 
@@ -134,7 +134,7 @@ Ultimately, it's up to you to do what you think is best.
 
 Our experience has shown us many advantages to keeping interfaces tiny and having them only expose what is needed.
 
-== Interface Definitions
+=== Interface Definitions
 
 So far, we have only used functions in the interface.
 Polylith also supports having `def` and `defmacro` statements in the interface.
@@ -160,7 +160,7 @@ There is no magic here; just include the definitions you want, like this:
   `(timbre/log! :info :p ~args))
 ----
 
-== More About Interfaces
+=== More About Interfaces
 
 This list of tips makes more sense when you have used Polylith for a while, so bookmark this section for later:
 
@@ -209,8 +209,3 @@ In this case, you can either:
 ** You want to consume Clojure code from another language on the JVM, e.g., Kotlin, where `interface` is a reserved word.
 You could set `:interface-ns` to anything that won't conflict, for the sake of this example, let's say `api`.
 The `poly` tool would now use `api` for the interface namespace name when it generates code when you create a component, but also recognize `interface` and `ifc` as interface names.
-
-
-
-
-

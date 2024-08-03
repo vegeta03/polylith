@@ -1,6 +1,5 @@
 // testing.adoc
-= Testing
-:toc:
+== Testing
 
 Polylith encourages a test-centric approach when working with code.
 New tests are easy to write, and you can avoid mocking in most cases because you can access all xref:component.adoc[components] from your xref:workspace.adoc[workspace].
@@ -38,7 +37,7 @@ Replace the `dummy-test` with a real test:
 .components/user/test/se/example/user/interface_test.clj
 [source,clojure]
 ----
-(ns se.example.user.interface-test
+(ns se.example.user.interface_test
   (:require [clojure.test :refer :all]
             [se.example.user.interface :as user]))
 
@@ -142,7 +141,7 @@ Adapt your test to match the new behavior:
 .components/user/test/se/example/user/interface_test.clj
 [source,clojure]
 ----
-(ns se.example.user.interface-test
+(ns se.example.user.interface_test
   (:require [clojure.test :refer :all]
             [se.example.user.interface :as user]))
 
@@ -217,10 +216,10 @@ In this case, you can include the brick for testing from `dev`.
 
 TIP: When a brick is marked for testing from multiple projects, `poly` will run its tests in the context of each of those projects.
 
-== Test Filters
+=== Test Filters
 
 [[filter-projects]]
-=== Filter on Projects
+==== Filter on Projects
 
 You can narrow the number of projects to test by specifying, e.g., `project:dev` or `project:cl:dev`.
 
@@ -258,7 +257,7 @@ image::images/testing/info-project-cl-dev-annotated.png[width=400]
 TIP: We'll show later that the `project` argument also applies to xref:#project-tests[project tests].
 
 [[filter-bricks]]
-=== Filter on Bricks
+==== Filter on Bricks
 
 You can also filter which bricks to include for test execution.
 If you've been following the tutorial, your workspace looks like this:
@@ -309,7 +308,7 @@ You can specify multiple bricks, e.g., `brick:cli:user`.
 You can exclude all bricks with the `brick:-` argument, which can be useful when combined with `:project` or `:all` to execute only the project tests.
 
 [[project-tests]]
-== Project Tests
+=== Project Tests
 
 Before we proceed, let's add a test to the `command-line` project.
 
@@ -442,7 +441,7 @@ Execution time: 2 seconds
 
 They passed!
 
-== Test approaches
+=== Test approaches
 
 As you have just seen, you can add tests at two levels: the brick and the project.
 
@@ -582,7 +581,7 @@ Execution time: 1 seconds
 Looks like it worked!
 
 [#setup-and-teardown]
-== Test Setup and Teardown
+==== Test Setup and Teardown
 
 Sometimes, tests require some setup before being run and some teardown (or cleanup) after being run.
 
@@ -693,12 +692,12 @@ Execution time: 2 seconds
 
 Nice, it worked!
 
-[[include-exclude]]
-== Include and Exclude Bricks by Configuration
+[[include-exclude-bricks]]
+==== Include and Exclude Bricks by Configuration
 
 There is a way to restrict what tests to run for a project by giving a list of bricks to include and/or exclude in `workspace.edn`, e.g.:
 
-[#include-exclude]
+[#include-exclude-bricks]
 [source,clojure]
 ----
 {...
@@ -736,7 +735,7 @@ We felt comfortable with this strategy because:
 
 IMPORTANT: When you exclude a brick via configuration, `poly` will never include it for testing, even when you specify `:project` or `:all` arguments.
 
-== Summary
+=== Summary
 
 Let's summarise the different ways to run the tests.
 
@@ -809,10 +808,10 @@ You can xref:#filter-bricks[filter bricks] to run the tests for with e.g., `bric
 
 Remember that the xref:commands.adoc#info[info] command is an excellent way to get an overview of what tests `poly` will run.
 
-== How Test Execution Works
+==== How Test Execution Works
 
 [[from-the-repl]]
-=== From the REPL
+===== From the REPL
 
 The primary purpose of the `development` project is to allow you to work with all of your code from your IDE using a single REPL.
 To meet that goal, you must set up your project in a way that is compatible with xref:tools-deps.adoc[tool.deps] and your IDE integration.
@@ -825,7 +824,7 @@ When you've set this up correctly, you can run your tests from your REPL, which 
 Libraries you reference as default dependencies are automatically accessible when you run tests.
 You should reference libraries you only need for testing under the `test` alias.
 
-=== From `poly`
+===== From `poly`
 
 When you run the xref:commands.adoc#test[test] command, `poly` will detect which components, bases and projects have been affected since the last xref:tagging.adoc[stable point in time].
 Based on this information, `poly` will:
@@ -872,7 +871,7 @@ And that the `invoicing` project uses it by executing `poly ws get:projects:invo
 
 Every project using the `datomic-ions` brick will inherit the `datomic-cloud` maven repository.
 
-== Troubleshooting
+==== Troubleshooting
 
 If your tests don't work for whatever reason, you can pass in `:verbose` to see the configuration and paths `poly` uses when executing the tests:
 
@@ -890,7 +889,7 @@ poly test :verbose
 ----
 <1> Represents the JVM classpath
 
-== Long-Lived Shell Sessions
+==== Long-Lived Shell Sessions
 
 For long-running xref:shell.adoc[shell] sessions, after running the xref:commands.adoc#test[test] command many times, you may eventually get `classloader` errors.
 

@@ -1,4 +1,4 @@
-= Tap
+== Tap
 
 We created the `tap` command to support xref:developing-poly.adoc[developing poly], but
 you might find it an interesting way to browse the internal xref:workspace-structure.adoc[workspace structure].

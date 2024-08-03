@@ -1,4 +1,4 @@
-= Colors
+== Colors
 :toc:
 
 The `poly` tool uses color to make its output easier to digest.

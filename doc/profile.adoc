@@ -1,4 +1,4 @@
-= Profile
+== Profile
 :toc:
 
 In production, your deployable xref:project.adoc[projects], by their nature, run in separate processes.

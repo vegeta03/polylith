@@ -1,4 +1,4 @@
-= Build
+== Build
 
 The `poly` tool doesn't include any `build` commands.
 That's because we don't want `poly` to restrict your build pipeline in any way.

@@ -1,5 +1,5 @@
 // project.adoc
-= Project
+== Project
 
 There are two kinds of `projects` in Polylith: development and deployable.
 

@@ -1,6 +1,3 @@
-= Development
-:toc:
-
 When working with a Polylith codebase, you are free to choose any editor/IDE you like, for example:
 
 * https://www.gnu.org/software/emacs/[Emacs] with https://cider.mx/[Cider]
@@ -9,7 +6,7 @@ When working with a Polylith codebase, you are free to choose any editor/IDE you
 
 * https://www.jetbrains.com/idea/[IntelliJ IDEA] with https://cursive-ide.com/[Cursive]
 
-== Generic Setup
+=== Generic Setup
 We only currently specifically describe <<idea-cursive>>.
 
 If you are using a different IDE, here's the generic goals:
@@ -28,11 +25,11 @@ If you are using a different IDE, here's the generic goals:
 . Celebrate a successful IDE setup!
 
 [[idea-cursive]]
-== IntelliJ IDEA with Cursive Setup
+=== IntelliJ IDEA with Cursive Setup
 
 Here, we share some specific setup instructions when using Cursive.
 
-=== Cursive Setup
+==== Cursive Setup
 First, make sure you have https://cursive-ide.com/userguide/deps.html[tools.deps] configured correctly.
 
 To import a Polylith xref:workspace.adoc[workspace] as a project:
@@ -79,7 +76,7 @@ nREPL server started on port 56855 on host localhost - nrepl://localhost:56855
 
 You have configured everything https://github.com/clojure/tools.deps[tools.deps] needs and are ready to write some Clojure code!
 
-=== Trying Out Your Development Environment
+==== Trying Out Your Development Environment
 
 Look at the generated `./deps.edn` file.
 Notice that it already includes `development/src` on the path under the `:dev` alias:

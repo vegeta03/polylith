@@ -1,4 +1,4 @@
-= Validations
+== Validations
 :toc:
 
 Each time you execute the xref:commands.adoc#check[check], xref:commands.adoc#info[info], or xref:commands.adoc#test[test] command, your workspace is validated.

@@ -1,14 +1,14 @@
-= Tools.deps
+== Tools.deps
 
 We created the `poly` tool on top of Clojure tools.deps.
 If you are unfamiliar with tools.deps, we recommend that you read its https://github.com/clojure/tools.deps[documentation] and https://clojure.org/reference/deps_edn[deps.edn Reference].
 
-== The `poly` Alias
+=== The `poly` Alias
 
 When you xref:workspace.adoc[create a workspace], `poly` generates a `./deps.edn` that includes a `poly` alias.
 We cover details in our xref:install.adoc#use-as-dependency[install docs].
 
-== clojure vs clj
+=== clojure vs clj
 
 Use `clojure` instead of `clj` when launching a `poly` xref:shell.adoc[shell] as xref:install.adoc#use-as-dependency[a clojure dependency]:
 

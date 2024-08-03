@@ -1,5 +1,4 @@
-= Test Runners
-:toc:
+== Test Runners
 :poly-version: 0.2.18
 :cljdoc-api-url: https://cljdoc.org/d/polylith/clj-poly/CURRENT/api
 
@@ -17,7 +16,7 @@ If you want to run tests with an external test runner, we recommend xref:#sean-e
 You can also xref:#write-your-own[write your own custom test runner].
 
 [[in-process]]
-== In-Process Test Runner
+=== In-Process Test Runner
 
 As you have learned, the `poly` tool can run your tests incrementally.
 It creates an isolated classloader for each project and runs your tests within that classloader.
@@ -29,7 +28,7 @@ For in-process test runners, the `poly` tool determines which bricks and project
 The `poly` tool, by default, uses an in-process test-runner.
 
 [[external]]
-== External Test Runner
+=== External Test Runner
 
 The alternative to the in-process isolated classloader approach is to execute each project's tests in a separate external Java subprocess.
 The advantage of this approach is that you have complete control of the test execution, and memory is released after each project when the subprocess terminates.
@@ -41,7 +40,7 @@ However, the external test runner will launch a subprocess to run the tests.
 IMPORTANT: The `poly` tool will not run the xref:testing.adoc#setup-and-teardown[test setup and teardown] functions for external test runners.
 The external test runner must run these functions within the external process it creates.
 
-== In-process vs. External Test Runner
+=== In-process vs. External Test Runner
 
 [%autowidth]
 |===
@@ -79,7 +78,7 @@ The external test runner must run these functions within the external process it
 
 |===
 
-== Use a Custom Test Runner
+=== Use a Custom Test Runner
 
 To use a custom test runner, add it to your `poly` tool classpath.
 An ideal place to do this is the `:poly` alias in your `./deps.edn` file:
@@ -150,7 +149,7 @@ Add a `:test` key in the project's configuration in your `workspace.edn` to sele
 ----
 
 [[write-your-own]]
-== Implement Your Own Custom Test Runner
+=== Implement Your Own Custom Test Runner
 
 Polylith supports writing test runners with two protocols: `TestRunner` and `ExternalTestRunner`.
 You can use these protocols to easily plugin custom test runner(s) into the `poly` tool.
@@ -218,7 +217,7 @@ a| A map of changes since the last stable point in time.
 |===
 
 [[test-configuration]]
-== Test configuration
+==== Test configuration
 
 If you create your own test runner or use one from the community, it can be useful to add snippets of test configuration when running the xref:commands.adoc#test[test] command.
 
@@ -305,7 +304,7 @@ Now when we understand how test configuration can be added, we can run the test 
 test-runners$ test with:default-test-runner
 ----
 
-== Test Runners from the Community
+==== Test Runners from the Community
 
 The default test runner works fine in most cases and is simple and fast.
 Sometimes, using the same classloader for all your tests in the workspace doesn't give enough isolation.
@@ -313,7 +312,7 @@ In this case, the External Test Runner is a good choice.
 If you switch to the Kaocha Test Runner, you will get more options for running your tests.
 
 [[imre-kaocha-test-runner]]
-=== Kaocha Test Runner
+===== Kaocha Test Runner
 
 A simple https://github.com/lambdaisland/kaocha/[Kaocha]-based test runner implementation for the `poly` tool.
 
@@ -324,7 +323,7 @@ Author:: https://github.com/imrekoszo[@imrekoszo]
 License:: MIT
 
 [[sean-external-test-runner]]
-=== External Test Runner
+===== External Test Runner
 
 An external (subprocess) test runner for Polylith.
 Avoids classloader, daemon thread, and memory usage issues by running tests in a subprocess with only Clojure itself as a dependency.

@@ -1,4 +1,4 @@
-= Configuration
+== Configuration
 :toc:
 
 We have three categories of configuration:

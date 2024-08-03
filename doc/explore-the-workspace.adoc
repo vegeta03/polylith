@@ -1,4 +1,4 @@
-= Explore the Workspace
+== Explore the Workspace
 :toc:
 
 The `poly` tool stores the workspace structure internally in an in-memory map.

@@ -1,5 +1,5 @@
 // commands.adoc
-= Commands
+== Commands
 :toc:
 
 // This code is generated (do not update manually).
